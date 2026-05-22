@@ -165,7 +165,7 @@ if __name__ == '__main__':
 
     try:
         with open("./config/config.yml", 'r') as ymlfile:
-            cfg = yaml.load(ymlfile)
+            cfg = yaml.load(ymlfile, Loader=yaml.SafeLoader)
     except FileNotFoundError:
         print("Config not found! Running make config automatically...")
         run_config()
