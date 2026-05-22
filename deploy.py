@@ -166,8 +166,12 @@ if __name__ == '__main__':
     try:
         with open("./config/config.yml", 'r') as ymlfile:
             cfg = yaml.load(ymlfile)
+    except FileNotFoundError:
+        print("Config not found! Running make config automatically...")
+        run_config()
+        sys.exit(0)
     except BaseException as e:
-        print(f"FATAL ERROR loading config: {e}\n")
+        print(f"FATAL ERROR loading config: {e}")
         import traceback
         traceback.print_exc()
         sys.exit(1)
