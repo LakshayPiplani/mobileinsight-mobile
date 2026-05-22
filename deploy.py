@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python3.7
 # Filename: deploy.py
 
 '''
@@ -166,10 +166,14 @@ if __name__ == '__main__':
     try:
         with open("./config/config.yml", 'r') as ymlfile:
             cfg = yaml.load(ymlfile)
-    except BaseException:
-        print("Compilation environment is not configured!\nRunning make config automatically for you...")
-        run_config()
-        sys.exit()
+    except BaseException as e:
+        print(f"FATAL ERROR loading config: {e}\n")
+        import traceback
+        traceback.print_exc()
+        sys.exit(1)
+        #print("Compilation environment is not configured!\nRunning make config automatically for you...")
+        #run_config()
+        #sys.exit()
 
     if arg == 'config':
         run_config()
