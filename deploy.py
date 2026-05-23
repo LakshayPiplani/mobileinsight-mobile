@@ -71,13 +71,13 @@ def run_apk(build_release):
         + ' --private={}/{}'.format(cfg['mi_dev_path'], cfg['app_path']) \
         + ' --package={}'.format(cfg['pkg_name']) \
         + ' --icon={}/{}'.format(cfg['mi_dev_path'], cfg['icon_path']) \
-        + ' --presplash={}/{}'.format(cfg['mi_dev_path'], cfg['presplash_path']) \
-        + ' --orientation={}'.format(cfg['orientation']) \
+        # + ' --presplash={}/{}'.format(cfg['mi_dev_path'], cfg['presplash_path']) \
+        # + ' --orientation={}'.format(cfg['orientation']) \
         + ' --sdk-dir={}'.format(cfg['sdk_path']) \
         + ' --android-api={}'.format(cfg['api_level']) \
         + ' --ndk-dir={}'.format(cfg['ndk_path']) \
         + ' --arch={}'.format(cfg['arch']) \
-        + ' --window'\
+        # + ' --window'\
         + ' --whitelist={}/{}'.format(cfg['mi_dev_path'], cfg['whitelist']) \
         + ' --permission WRITE_EXTERNAL_STORAGE' \
         + ' --permission READ_EXTERNAL_STORAGE' \
