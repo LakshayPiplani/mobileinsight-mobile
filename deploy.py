@@ -88,7 +88,7 @@ def run_apk(build_release):
     # + ' --intent-filters BOOT_COMPLETED'
         # + ' --presplash={}/{}'.format(cfg['mi_dev_path'], cfg['presplash_path']) \
         # + ' --orientation={}'.format(cfg['orientation']) \
-        # + ' --window'\
+        # + ' --window'
 
     if build_release is True:
         clean_cmd = 'rm {}-{}.apk'.format(cfg['app_name'], cfg['app_version'])
